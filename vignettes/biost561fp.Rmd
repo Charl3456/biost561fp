@@ -1,5 +1,5 @@
 ---
-title: "Get Started with biost561fp"
+title: "biost561fp"
 output: 
   rmarkdown::html_document:
     toc: true
@@ -7,7 +7,7 @@ output:
       toc_collapsed: true
     theme: united
 vignette: >
-  %\VignetteIndexEntry{Get Started with biost561fp}
+  %\VignetteIndexEntry{biost561fp}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
