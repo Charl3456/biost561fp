@@ -2,7 +2,7 @@
 
 `biost561fp` is an R package that provides tools to solve the Traveling Salesperson Problem (TSP) using various heuristic methods.
 - The URL to the GitHub (i.e., the source code) is: https://github.com/Charl3456/biost561fp
-- The URL to the Pkgdown webpage is: https://Charl3456.github.io/biost561fp/
+- The URL to the Pkgdown webpage is: [https://Charl3456.github.io/biost561fp/](https://charl3456.github.io/biost561fp/)
 ## Installation
 
 You can install the development version of `biost561fp` from GitHub with:
