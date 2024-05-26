@@ -1,8 +1,8 @@
 ---
-title: "Traveling_Salesperson_Problem_Solver"
+title: "Get Started with biost561fp"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Traveling_Salesperson_Problem_Solver}
+  %\VignetteIndexEntry{Get Started with biost561fp}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

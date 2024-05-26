@@ -1,0 +1,23 @@
+pkgdown:
+  title: "biost561fp"
+  description: "Solves the Traveling Salesperson Problem using various heuristic algorithms."
+  url: https://your-username.github.io/biost561fp/
+
+navbar:
+  structure:
+    left:
+      - text: "Home"
+        href: index.html
+      - text: "Get Started"
+        href: articles/biost561fp.html
+      - text: "Reference"
+        href: reference/index.html
+
+template:
+  bootstrap: 5
+
+articles:
+  - title: "Get Started with biost561fp"
+    desc: "An introduction to the biost561fp package."
+    contents:
+      - vignettes/biost561fp.Rmd
