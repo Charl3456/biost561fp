@@ -14,6 +14,8 @@ install.packages("devtools")
 # Install biost561fp from GitHub
 devtools::install_github("Charl3456/biost561fp")
 ```
+
+
 ## Usage
 Here is a basic example of how to use the biost561fp package to solve the TSP using different algorithms:
 
