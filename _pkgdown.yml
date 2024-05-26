@@ -1,4 +1,15 @@
-url: ~
+pkgdown:
+  title: "biost561fp"
+  description: "Solves the Traveling Salesperson Problem using various heuristic algorithms."
+  url: https://your-username.github.io/biost561fp/
+
+navbar:
+  structure:
+    left:
+      - home
+      - reference
+      - articles
+      - news
+
 template:
   bootstrap: 5
-
