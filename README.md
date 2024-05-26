@@ -38,3 +38,14 @@ best_solution <- solveTSP(distMatrix)
 print(best_solution)
 
 ```
+##Dependencies
+The package depends on the following packages: GA and stats.
+
+##Session info
+This package was developed in the following environment
+
+
+```r
+devtools::session_info()
+
+```
