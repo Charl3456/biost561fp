@@ -1,6 +1,11 @@
 ---
 title: "Get Started with biost561fp"
-output: rmarkdown::html_vignette
+output: 
+  rmarkdown::html_document:
+    toc: true
+    toc_float:
+      toc_collapsed: true
+    theme: united
 vignette: >
   %\VignetteIndexEntry{Get Started with biost561fp}
   %\VignetteEngine{knitr::rmarkdown}
