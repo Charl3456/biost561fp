@@ -18,5 +18,4 @@ Suggests:
   ggplot2,
   testthat
 VignetteBuilder: knitr
-
-
+URL: https://charl3456.github.io/biost561fp/
