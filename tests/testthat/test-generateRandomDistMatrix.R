@@ -1,5 +1,7 @@
+if (!requireNamespace("testthat", quietly = TRUE)) {
+  stop("The testthat package is required but not installed.")
+}
 library(testthat)
-library(tspSolver)
 
 test_that("generateRandomDistMatrix creates a matrix of the correct size", {
   numCities <- 5

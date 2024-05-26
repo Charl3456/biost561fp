@@ -3,3 +3,4 @@
 export(generateRandomDistMatrix)
 export(geneticAlgorithm)
 export(nearestNeighbor)
+export(solveTSP)

@@ -17,12 +17,28 @@
 #' print(result)
 #' @export
 geneticAlgorithm <- function(distMatrix, popSize = 50, maxGenerations = 100) {
+  # Ensure GA package is loaded
+  if (!requireNamespace("GA", quietly = TRUE)) {
+    stop("The GA package is required but not installed.")
+  }
+
+  if (nrow(distMatrix) < 4) {
+    stop("The genetic algorithm requires at least 4 cities.")
+  }
+
+  tspFitness <- function(tour, distMatrix) {
+    tour <- c(tour, tour[1])
+    total_distance <- sum(distMatrix[tour, c(tour[-1], tour[1])])
+    return(-total_distance)
+  }
+
   n <- nrow(distMatrix)
-  GA <- ga(type = "permutation", fitness = function(tour) tspFitness(tour, distMatrix),
-           lower = 1, upper = n, popSize = popSize, maxiter = maxGenerations,
-           pmutation = 0.2)
+  GA <- GA::ga(type = "permutation", fitness = function(tour) tspFitness(tour, distMatrix),
+               lower = 1, upper = n, popSize = popSize, maxiter = maxGenerations,
+               pmutation = 0.2)
   bestTour <- GA@solution[1, ]
   bestTour <- c(bestTour, bestTour[1])
   bestDistance <- -GA@fitnessValue
   return(list(tour = bestTour, distance = bestDistance))
 }
+

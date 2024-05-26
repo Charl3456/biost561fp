@@ -1,5 +1,7 @@
+if (!requireNamespace("testthat", quietly = TRUE)) {
+  stop("The testthat package is required but not installed.")
+}
 library(testthat)
-library(tspSolver)
 
 test_that("geneticAlgorithm returns a list with tour and distance", {
   distMatrix <- generateRandomDistMatrix(5)
@@ -27,8 +29,13 @@ test_that("geneticAlgorithm calculates a non-negative distance", {
   expect_true(result$distance >= 0)
 })
 
-test_that("geneticAlgorithm works for a simple 3-city case", {
-  distMatrix <- matrix(c(0, 1, 2, 1, 0, 3, 2, 3, 0), nrow = 3, byrow = TRUE)
+test_that("geneticAlgorithm works for a simple 4-city case", {
+  distMatrix <- matrix(c(
+    0, 1, 2, 3,
+    1, 0, 4, 5,
+    2, 4, 0, 6,
+    3, 5, 6, 0
+  ), nrow = 4, byrow = TRUE)
   result <- geneticAlgorithm(distMatrix)
   expect_equal(result$tour[length(result$tour)], result$tour[1])
 })

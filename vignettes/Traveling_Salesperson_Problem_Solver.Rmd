@@ -1,0 +1,64 @@
+---
+title: "Traveling_Salesperson_Problem_Solver"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Traveling_Salesperson_Problem_Solver}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(biost561fp)
+library(GA)
+```
+__Introduction__
+The biost561fp package provides tools to solve the Traveling Salesperson Problem (TSP) using various heuristic methods. This vignette demonstrates how to generate a random distance matrix, solve the TSP using different algorithms, and compare the results.
+
+__Generating a Random Distance Matrix__
+First, we generate a random distance matrix using the generateRandomDistMatrix function. This matrix represents the distances between cities.
+```{r}
+# Set seed for reproducibility
+set.seed(123)
+
+# Number of cities
+numCities <- 5
+
+# Generate random distance matrix
+distMatrix <- generateRandomDistMatrix(numCities)
+print(distMatrix)
+```
+
+__Solving the TSP using Nearest Neighbor Algorithm__
+Next, we solve the TSP using the nearest neighbor heuristic with the nearestNeighbor function.
+
+```{r}
+# Solve TSP using nearest neighbor algorithm
+nn_result <- nearestNeighbor(distMatrix)
+print(nn_result)
+```
+__Solving the TSP using Genetic Algorithm__
+We also solve the TSP using a genetic algorithm with the geneticAlgorithm function.
+
+```{r}
+# Solve TSP using genetic algorithm
+ga_result <- geneticAlgorithm(distMatrix)
+print(ga_result)
+```
+__Finding the Best Solution__
+Finally, we find the best solution using the solveTSP function, which compares the results of the nearest neighbor and genetic algorithms and returns the best one.
+
+```{r}
+# Find the best solution using all methods
+best_solution <- solveTSP(distMatrix)
+print(best_solution)
+```
+__Summary__
+In this vignette, we demonstrated how to generate a random distance matrix, solve the TSP using the nearest neighbor and genetic algorithms, and find the best solution using the solveTSP function. The tspSolver package provides a simple and effective way to solve the Traveling Salesperson Problem using various heuristic methods.
+```

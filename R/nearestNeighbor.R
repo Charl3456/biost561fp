@@ -28,5 +28,7 @@ nearestNeighbor <- function(distMatrix) {
     visited[next_city] <- TRUE
   }
   tour[n + 1] <- tour[1]
-  return(list(tour = tour, distance = sum(distMatrix[tour, c(tour[-1], tour[1])])))
+  total_distance <- sum(distMatrix[cbind(tour[-length(tour)], tour[-1])])
+  return(list(tour = tour, distance = total_distance))
 }
+

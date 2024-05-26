@@ -11,7 +11,7 @@
 #' print(distMatrix)
 #' @export
 generateRandomDistMatrix <- function(numCities, maxDistance = 100) {
-  distMatrix <- matrix(runif(numCities * numCities, min = 1, max = maxDistance), nrow = numCities)
+  distMatrix <- matrix(stats::runif(numCities * numCities, min = 1, max = maxDistance), nrow = numCities)
   distMatrix[lower.tri(distMatrix)] <- t(distMatrix)[lower.tri(distMatrix)]
   diag(distMatrix) <- 0
   return(distMatrix)

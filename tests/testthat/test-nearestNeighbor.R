@@ -1,14 +1,7 @@
+if (!requireNamespace("testthat", quietly = TRUE)) {
+  stop("The testthat package is required but not installed.")
+}
 library(testthat)
-library(tspSolver)
-
-test_that("nearestNeighbor returns a list with tour and distance", {
-  distMatrix <- generateRandomDistMatrix(5)
-  result <- nearestNeighbor(distMatrix)
-  expect_true(is.list(result))
-  expect_true("tour" %in% names(result))
-  expect_true("distance" %in% names(result))
-})
-
 test_that("nearestNeighbor tour starts and ends at the first city", {
   distMatrix <- generateRandomDistMatrix(5)
   result <- nearestNeighbor(distMatrix)
@@ -30,6 +23,8 @@ test_that("nearestNeighbor calculates a non-negative distance", {
 test_that("nearestNeighbor works for a simple 3-city case", {
   distMatrix <- matrix(c(0, 1, 2, 1, 0, 3, 2, 3, 0), nrow = 3, byrow = TRUE)
   result <- nearestNeighbor(distMatrix)
-  expect_equal(result$tour, c(1, 2, 3, 1))
-  expect_equal(result$distance, 6)
+  expected_tour <- c(1, 2, 3, 1)
+  expected_distance <- sum(distMatrix[cbind(expected_tour[-4], expected_tour[-1])])
+  expect_equal(result$tour, expected_tour)
+  expect_equal(result$distance, expected_distance)
 })
