@@ -2,8 +2,8 @@ pandoc: 3.1.11
 pkgdown: 2.0.9
 pkgdown_sha: ~
 articles:
-  Get Started with biost561fp: Get Started with biost561fp.html
-last_built: 2024-05-26T23:07Z
+  biost561fp: biost561fp.html
+last_built: 2024-05-26T23:17Z
 urls:
   reference: https://charl3456.github.io/biost561fp/reference
   article: https://charl3456.github.io/biost561fp/articles
